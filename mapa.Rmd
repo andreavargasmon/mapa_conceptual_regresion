@@ -1,0 +1,22 @@
+---
+title: "Mapa conceptual"
+author: "Andrea Vargas y Sury Chavarria"
+output:
+  html_document:
+    theme: yeti
+---
+
+```{r echo=FALSE}
+library(readxl)
+library(collapsibleTree)
+library(colorspace)
+Modelos_lineales_generalizados <- read_excel("base.xlsx", col_names = TRUE)
+  collapsibleTree(
+    Modelos_lineales_generalizados, 
+    hierarchy = c("hijos", "subhijos", "sub2","sub3","sub4","sub5"),
+    width = 2000, 
+    height = 500,  
+    fill = rainbow_hcl(288), 
+    root = "Modelos lineales generalizados")
+  
+```
